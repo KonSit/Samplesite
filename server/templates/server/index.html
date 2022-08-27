@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Главная страница</title>
+        <link rel="stylesheet" type="text/css"
+        href="{% static 'server/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Объявления</h1>
+            <nav>
+                <a href="{% url 'index' %}">Главная</a>
+                <a href="{% url 'add' %}">Добавить</a>
+                {% for rub in rubrics %}
+                <a href="{% url 'by_rubric' rub.pk %}">{{rub.name}}</a>
+                {% endfor %}
+            </nav>
+        </header>
+        <main>
+            {% for bb in bbs %}
+            <section>
+                <h2>{{ bb.title }}</h2>
+                <p>{{ bb.content }}</p>
+                <p><a href="/server/{{ bb.rubric.pk }}/">
+                {{ bb.rubric.name }}</a></p>
+                <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+            </section>
+            {% endfor %}
+        </main>
+    </body>
+</html>

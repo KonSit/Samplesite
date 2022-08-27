@@ -1,0 +1,26 @@
+body {
+	background-color:  #2D2E35
+}
+
+section {
+	background: #ffb703;
+	float: left; /*Задаем обтекание*/
+	line-height: 15px;/*Высота строки +  верт. центрирования текста*/
+	width: 320px;
+	margin-top: 60px;
+	margin-left: 55px;
+	border-radius: 8px;
+	text-align: center;
+}
+
+header {
+	background: #ffb703;
+	height: 100px
+	font-size: 40pt;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+nav{
+	background: #ff7b00
+}
